@@ -1,0 +1,15 @@
+{
+  "name": "oct-t3w2-intro-to-nodejs",
+  "version": "1.0.0",
+  "description": "Some cool description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Brett",
+  "license": "MIT",
+  "dependencies": {
+    "pokemon": "^3.0.0"
+  }
+}
