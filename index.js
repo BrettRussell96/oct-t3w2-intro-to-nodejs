@@ -33,15 +33,22 @@ function app() {
     do {
         let n = parseFloat(prompt("What number of pokemon do you want to see? "));
     
-        console.log(typeof(n));
-        console.log("Input is not a number:" + Number.isNaN(n));
+        // console.log(typeof(n));
+        // console.log("Input is not a number:" + Number.isNaN(n));
     
         if (Number.isNaN(n)){
             throw new Error("User did not enter a number!");
         }
-    
-        console.log("You entered " + n);
-    
+        //Give number to pokemon package  and get result
+        try {
+            let pokemonName = pokemonPrinterFile.pokemonNameFromNumber(n);
+        console.log(`Your Pokemon is ${pokemonName}! How exciting!`);
+        } catch (error) {
+            console.log("Try number between 1 and 1025!");
+        }
+        
+        // console.log("You entered " + n);
+        
         let userInputToExit = prompt("Would you like to try again? ");
         if (userInputToExit == "y") {
             userInputToExit = false;
