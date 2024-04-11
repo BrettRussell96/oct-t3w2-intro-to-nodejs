@@ -1,15 +1,5 @@
 require('dotenv').config();
-
-
-
-
-
-
-
-
-
-
-
+const pokemon = require('pokemon');
 
 
 
@@ -30,6 +20,7 @@ let promptInstance = promptPackage({sigint: true});
 let userWantsToExit = false;
 
 function app() {
+
     do {
         let n = parseFloat(prompt("What number of pokemon do you want to see? "));
     
@@ -48,7 +39,7 @@ function app() {
         }
         
         // console.log("You entered " + n);
-        
+
         let userInputToExit = prompt("Would you like to try again? ");
         if (userInputToExit == "y") {
             userInputToExit = false;
@@ -83,7 +74,7 @@ console.log(process.env.ENVIRONMENT_MESSAGE);
 
 console.log("Terminal app is running!");
 
-const pokemon = require('pokemon');
+
 
 let randomPokemon = pokemon.random();
 
