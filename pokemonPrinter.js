@@ -3,7 +3,7 @@ function pokemonPrinter(){
 
     let randomPokemon = pokemon.random();
 
-    console.log(`Today's lucky pokemon is ${randomPokemon}`)
+    console.log(`Today's lucky pokemon is ${randomPokemon}`);
 }
 
 module.exports = {
