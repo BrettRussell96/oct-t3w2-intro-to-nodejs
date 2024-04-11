@@ -29,19 +29,38 @@ let promptInstance = promptPackage({sigint: true});
 
 let userWantsToExit = false;
 
-do {
-    let n = parseFloat(prompt("What number of pokemon do you want to see? "));
-    console.log("You entered " + n);
-
-    let userInputToExit = prompt("Would you like to try again? ");
-    if (userInputToExit == "y") {
-        userInputToExit = false;
-    } else {
-        userInputToExit = true;
+function app() {
+    do {
+        let n = parseFloat(prompt("What number of pokemon do you want to see? "));
+    
+        console.log(typeof(n));
+        console.log("Input is not a number:" + Number.isNaN(n));
+    
+        if (Number.isNaN(n)){
+            throw new Error("User did not enter a number!");
+        }
+    
+        console.log("You entered " + n);
+    
+        let userInputToExit = prompt("Would you like to try again? ");
+        if (userInputToExit == "y") {
+            userInputToExit = false;
+        } else {
+            userInputToExit = true;
+        }
+    
+    } while (userWantsToExit == false); {
+    
     }
+}
 
-} while (userWantsToExit == false); {
-
+try {
+    app();
+} catch (error) {
+    console.log("Gracefully shutting down...");
+    console.log(error.message);
+    // full error obj has stacktrace, users should not see that
+    // console.log(error);
 }
 
 console.log("User entered: " + n);
